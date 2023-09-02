@@ -1,3 +1,16 @@
+
+class Game{
+  constructor(player1,player2, height = 6, width = 7){
+    this.player1 = player1;
+    this.player2 = player2;
+    this.height = height;
+    this.width = width;
+    this.currPlayer = 1;
+    this.makeBoard();
+    this.makeHtmlBoard();
+    this.gameOver = false;
+  }
+
 /** Connect Four
  *
  * Player 1 and 2 alternate turns. On each turn, a piece is dropped down a
@@ -5,33 +18,29 @@
  * board fills (tie)
  */
 
-const WIDTH = 7;
-const HEIGHT = 6;
 
-let currPlayer = 1; // active player: 1 or 2
-let board = []; // array of rows, each row is array of cells  (board[y][x])
-
-/** makeBoard: create in-JS board structure:
- *   board = array of rows, each row is array of cells  (board[y][x])
- */
-
-function makeBoard() {
+makeBoard() {
+  this.board = [];
   for (let y = 0; y < HEIGHT; y++) {
     board.push(Array.from({ length: WIDTH }));
   }
 }
 
+
 /** makeHtmlBoard: make HTML table and row of column tops. */
 
-function makeHtmlBoard() {
+makeHtmlBoard() {
   const board = document.getElementById('board');
+  board.innerHTML= '';
 
   // make column tops (clickable area for adding a piece to that column)
   const top = document.createElement('tr');
   top.setAttribute('id', 'column-top');
-  top.addEventListener('click', handleClick);
+  
+  top.addEventListener('click', this.handleGameClick);
 
-  for (let x = 0; x < WIDTH; x++) {
+
+  for (let x = 0; x < this.width; x++) {
     const headCell = document.createElement('td');
     headCell.setAttribute('id', x);
     top.append(headCell);
@@ -149,3 +158,4 @@ function checkForWin() {
 
 makeBoard();
 makeHtmlBoard();
+}
