@@ -1,8 +1,8 @@
 /* game board table */
 
 #board td {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   border: solid 1px #666;
 }
 
@@ -15,13 +15,13 @@
   border-radius: 50%;
 }
 
-.piece.p1 {
+/* .piece.p1 {
   background-color: red;
 }
 
 .piece.p2 {
   background-color: blue;
-}
+} */
 
 /* column-top is table row of clickable areas for each column */
 
@@ -30,5 +30,30 @@
 }
 
 #column-top td:hover {
-  background-color: gold;
+  background-color: rgb(37, 3, 98);
+}
+
+#startGame {
+  background-color: rgba(79, 79, 248, 0.493);
+color: rgb(3, 10, 88);
+font-weight: bold;
+}
+
+body {
+	background: linear-gradient(-45deg, #fb70465c, #de4df879, #2961ed78, #09a24e7f);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
