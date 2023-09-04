@@ -31,7 +31,14 @@
 
 #column-top td:hover {
   background-color: rgb(37, 3, 98);
+
 }
+
+h1{
+	position: relative;
+	left: 100px;
+}
+
 
 #startGame {
   background-color: rgba(79, 79, 248, 0.493);
@@ -40,7 +47,7 @@ font-weight: bold;
 }
 
 body {
-	background: linear-gradient(-45deg, #fb70465c, #de4df879, #2961ed78, #09a24e7f);
+	background: linear-gradient(-45deg, #fe73485c, #6e088079, #2961ed78, #09a24e7f);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
 	height: 100vh;
